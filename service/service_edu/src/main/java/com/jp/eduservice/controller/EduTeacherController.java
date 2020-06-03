@@ -28,6 +28,7 @@ import java.util.Map;
 @Api(tags = {"讲师管理"})
 @RestController
 @RequestMapping("/eduservice/teacher")
+@CrossOrigin //跨域
 public class EduTeacherController {
 
     //注入service
@@ -113,6 +114,8 @@ public class EduTeacherController {
         if (!StringUtils.isEmpty(end)) {
             wrapper.le("gmt_modified", end);
         }
+        wrapper.orderByDesc("gmt_create");
+
         teacherService.page(page, wrapper);
         long total = page.getTotal();
         List<EduTeacher> records = page.getRecords();
