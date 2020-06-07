@@ -4,6 +4,7 @@ package com.jp.eduservice.controller;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.jp.commonutils.R;
+import com.jp.eduservice.client.VodClient;
 import com.jp.eduservice.entity.EduCourse;
 import com.jp.eduservice.entity.vo.CourseInfoVo;
 import com.jp.eduservice.entity.vo.CoursePublishVo;
@@ -82,8 +83,6 @@ public class EduCourseController {
         return R.ok();
     }
 
-
-    //TODO 完善条件查询带分页
 
     @ApiOperation("课程列表")
     @GetMapping("courseList")

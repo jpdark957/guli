@@ -3,11 +3,14 @@ package com.jp.eduservice.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.jp.commonutils.R;
+import com.jp.eduservice.client.VodClient;
 import com.jp.eduservice.entity.EduVideo;
 import com.jp.eduservice.service.EduVideoService;
+import com.jp.servicebase.exceptionHandler.JpExceptionHandler;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -27,6 +30,10 @@ public class EduVideoController {
     @Autowired
     private EduVideoService videoService;
 
+    //注入vodClient
+    @Autowired
+    private VodClient vodClient;
+
     @ApiOperation("添加小节")
     @PostMapping("addVideo")
     public R addVideo(@RequestBody EduVideo eduVideo) {
@@ -34,10 +41,32 @@ public class EduVideoController {
         return R.ok();
     }
 
-    //TODO 后面这个方法需要完善：小节中有视频，删除小节时候，同时把里面的视频删除
-    @ApiOperation("删除小节")
+    @ApiOperation("删除视频id和name")
+    @PostMapping("deleteVidAndName/{id}")
+    public R deleteVidAndName(@PathVariable String id) {
+        QueryWrapper<EduVideo> wrapper = new QueryWrapper<>();
+        wrapper.eq("id", id);
+        EduVideo eduVideo = videoService.getById(id);
+        eduVideo.setId(id);
+        eduVideo.setVideoSourceId(null);
+        eduVideo.setVideoOriginalName(null);
+        videoService.update(eduVideo, wrapper);
+        return R.ok();
+    }
+
+    @ApiOperation("删除小节删除对应的视频")
     @DeleteMapping("deleteVideo/{id}")
     public R deleteVideo(@PathVariable String id) {
+        //根据小节id获取视频id，调用方法实现视频删除
+        EduVideo eduVideo = videoService.getById(id);
+        String videoSourceId = eduVideo.getVideoSourceId();
+        //根据视频id，远程调用实现视频删除
+        if(!StringUtils.isEmpty(videoSourceId)) {
+            R result = vodClient.removeAlyVideo(videoSourceId);
+            if(result.getCode() == 201) {
+                throw new JpExceptionHandler(201, "删除视频失败，熔断器");
+            }
+        }
         videoService.removeById(id);
         return R.ok();
     }

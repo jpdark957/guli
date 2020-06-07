@@ -12,5 +12,4 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2020-06-03
  */
 public interface EduVideoService extends IService<EduVideo> {
-
 }

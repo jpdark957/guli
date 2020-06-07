@@ -1,5 +1,6 @@
 package com.jp.eduservice.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.jp.eduservice.entity.EduVideo;
 import com.jp.eduservice.mapper.EduVideoMapper;
 import com.jp.eduservice.service.EduVideoService;

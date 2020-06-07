@@ -3,37 +3,64 @@
   <component name="ChangeListManager">
     <list default="true" id="0aa69a3e-1bdf-4266-acdf-d3f3e8104e65" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logger/edu/log_error.log" beforeDir="false" afterPath="$PROJECT_DIR$/logger/edu/log_error.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logger/edu/log_info.log" beforeDir="false" afterPath="$PROJECT_DIR$/logger/edu/log_info.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logger/edu/log_warn.log" beforeDir="false" afterPath="$PROJECT_DIR$/logger/edu/log_warn.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service_edu/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service/service_edu/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service_edu/src/main/java/com/jp/eduservice/controller/EduChapterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service_edu/src/main/java/com/jp/eduservice/controller/EduChapterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/service/service.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/service_edu/service_edu.iml" beforeDir="false" afterPath="$PROJECT_DIR$/service/service_edu/service_edu.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/service_edu/src/main/java/com/jp/eduservice/EduApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service_edu/src/main/java/com/jp/eduservice/EduApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/service_edu/src/main/java/com/jp/eduservice/controller/EduCourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service_edu/src/main/java/com/jp/eduservice/controller/EduCourseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service_edu/src/main/java/com/jp/eduservice/controller/EduCourseDescriptionController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/service/service_edu/src/main/java/com/jp/eduservice/controller/EduVideoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service_edu/src/main/java/com/jp/eduservice/controller/EduVideoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service_edu/src/main/java/com/jp/eduservice/entity/EduChapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service_edu/src/main/java/com/jp/eduservice/entity/EduChapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service_edu/src/main/java/com/jp/eduservice/entity/EduCourse.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service_edu/src/main/java/com/jp/eduservice/entity/EduCourse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service_edu/src/main/java/com/jp/eduservice/entity/EduCourseDescription.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service_edu/src/main/java/com/jp/eduservice/entity/EduCourseDescription.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/service_edu/src/main/java/com/jp/eduservice/entity/EduVideo.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service_edu/src/main/java/com/jp/eduservice/entity/EduVideo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service_edu/src/main/java/com/jp/eduservice/mapper/EduCourseMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service_edu/src/main/java/com/jp/eduservice/mapper/EduCourseMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service_edu/src/main/java/com/jp/eduservice/mapper/xml/EduCourseMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service/service_edu/src/main/java/com/jp/eduservice/mapper/xml/EduCourseMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service_edu/src/main/java/com/jp/eduservice/service/EduChapterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service_edu/src/main/java/com/jp/eduservice/service/EduChapterService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service_edu/src/main/java/com/jp/eduservice/service/EduCourseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service_edu/src/main/java/com/jp/eduservice/service/EduCourseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service_edu/src/main/java/com/jp/eduservice/service/impl/EduChapterServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service_edu/src/main/java/com/jp/eduservice/service/impl/EduChapterServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/service_edu/src/main/java/com/jp/eduservice/service/EduVideoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service_edu/src/main/java/com/jp/eduservice/service/EduVideoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/service_edu/src/main/java/com/jp/eduservice/service/impl/EduCourseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service_edu/src/main/java/com/jp/eduservice/service/impl/EduCourseServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/service_edu/src/main/java/com/jp/eduservice/service/impl/EduVideoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service_edu/src/main/java/com/jp/eduservice/service/impl/EduVideoServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/service_edu/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/service/service_edu/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/service_edu/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/service/service_edu/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service_oss/src/main/java/com/jp/oss/controller/OssController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service_oss/src/main/java/com/jp/oss/controller/OssController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/service_edu/target/classes/com/jp/eduservice/EduApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/service/service_edu/target/classes/com/jp/eduservice/EduApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/service_oss/src/main/java/com/jp/oss/OssApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service_oss/src/main/java/com/jp/oss/OssApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/service_oss/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/service/service_oss/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/service_vod/src/main/java/com/jp/vod/VodApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service_vod/src/main/java/com/jp/vod/VodApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/service_vod/src/main/java/com/jp/vod/controller/VodController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service_vod/src/main/java/com/jp/vod/controller/VodController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/service_vod/src/main/java/com/jp/vod/service/VodService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service_vod/src/main/java/com/jp/vod/service/VodService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/service_vod/src/main/java/com/jp/vod/service/impl/VodServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service_vod/src/main/java/com/jp/vod/service/impl/VodServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/service_vod/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/service/service_vod/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - @localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - @localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - @localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="guli: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+    </expand>
+    <select />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="guli_parent" />
@@ -66,6 +93,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -83,7 +111,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Java" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -93,7 +121,7 @@
       <recent name="E:\ITRelevant\project\NowDoingProject\Back-end\SprintBoot\guli_parent\service\service_edu\src\test\java\com\jp\demo" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.VodApplication">
+  <component name="RunManager" selected="Spring Boot.EduApplication">
     <configuration name="TestEasyExcel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.jp.demo.excel.TestEasyExcel" />
       <module name="service_edu" />
@@ -178,8 +206,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.EduApplication" />
         <item itemvalue="Spring Boot.VodApplication" />
+        <item itemvalue="Spring Boot.EduApplication" />
         <item itemvalue="Application.TestVod" />
         <item itemvalue="JUnit.CodeGenerator.run" />
         <item itemvalue="Application.TestEasyExcel" />
@@ -191,7 +219,12 @@
       <list>
         <serviceView>
           <treeState>
-            <expand />
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:MySQL - @localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
             <select />
           </treeState>
         </serviceView>
@@ -215,7 +248,7 @@
       <workItem from="1591145309263" duration="57123000" />
       <workItem from="1591405380519" duration="1707000" />
       <workItem from="1591408293322" duration="2240000" />
-      <workItem from="1591410553502" duration="10457000" />
+      <workItem from="1591410553502" duration="27270000" />
     </task>
     <servers />
   </component>
@@ -231,10 +264,14 @@
       <screen x="0" y="0" width="1842" height="1080" />
     </state>
     <state x="513" y="198" key="#Project_Structure/0.0.1842.1080@0.0.1842.1080" timestamp="1590813602524" />
-    <state x="726" y="256" key="#com.intellij.ide.util.MemberChooser" timestamp="1591412219152">
+    <state x="513" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591526928625">
       <screen x="0" y="0" width="1842" height="1080" />
     </state>
-    <state x="726" y="256" key="#com.intellij.ide.util.MemberChooser/0.0.1842.1080/-1538.177.1538.900@0.0.1842.1080" timestamp="1591412219152" />
+    <state x="513" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1842.1080/-1538.177.1538.900@0.0.1842.1080" timestamp="1591526928625" />
+    <state x="726" y="256" key="#com.intellij.ide.util.MemberChooser" timestamp="1591532301830">
+      <screen x="0" y="0" width="1842" height="1080" />
+    </state>
+    <state x="726" y="256" key="#com.intellij.ide.util.MemberChooser/0.0.1842.1080/-1538.177.1538.900@0.0.1842.1080" timestamp="1591532301830" />
     <state x="726" y="256" key="#com.intellij.ide.util.MemberChooser/0.0.1842.1080@0.0.1842.1080" timestamp="1590816674411" />
     <state x="425" y="456" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1590584372468">
       <screen x="0" y="0" width="1842" height="1080" />
@@ -244,71 +281,91 @@
       <screen x="0" y="0" width="1842" height="1080" />
     </state>
     <state x="701" y="295" key="FileChooserDialogImpl/0.0.1842.1080@0.0.1842.1080" timestamp="1590592348381" />
-    <state width="1799" height="192" key="GridCell.Tab.0.bottom" timestamp="1591450139553">
+    <state width="1799" height="247" key="GridCell.Tab.0.bottom" timestamp="1591529068196">
       <screen x="0" y="0" width="1842" height="1080" />
     </state>
     <state width="1495" height="283" key="GridCell.Tab.0.bottom/0.0.1842.1080/-1538.177.1538.900@-1538.177.1538.900" timestamp="1591362548017" />
-    <state width="1799" height="192" key="GridCell.Tab.0.bottom/0.0.1842.1080/-1538.177.1538.900@0.0.1842.1080" timestamp="1591450139553" />
+    <state width="1799" height="247" key="GridCell.Tab.0.bottom/0.0.1842.1080/-1538.177.1538.900@0.0.1842.1080" timestamp="1591529068196" />
     <state width="1799" height="501" key="GridCell.Tab.0.bottom/0.0.1842.1080@0.0.1842.1080" timestamp="1590819767114" />
-    <state width="1799" height="192" key="GridCell.Tab.0.center" timestamp="1591450139553">
+    <state width="1799" height="247" key="GridCell.Tab.0.center" timestamp="1591529068196">
       <screen x="0" y="0" width="1842" height="1080" />
     </state>
     <state width="1495" height="283" key="GridCell.Tab.0.center/0.0.1842.1080/-1538.177.1538.900@-1538.177.1538.900" timestamp="1591362548017" />
-    <state width="1799" height="192" key="GridCell.Tab.0.center/0.0.1842.1080/-1538.177.1538.900@0.0.1842.1080" timestamp="1591450139553" />
+    <state width="1799" height="247" key="GridCell.Tab.0.center/0.0.1842.1080/-1538.177.1538.900@0.0.1842.1080" timestamp="1591529068196" />
     <state width="1799" height="501" key="GridCell.Tab.0.center/0.0.1842.1080@0.0.1842.1080" timestamp="1590819767114" />
-    <state width="1799" height="192" key="GridCell.Tab.0.left" timestamp="1591450139553">
+    <state width="1799" height="247" key="GridCell.Tab.0.left" timestamp="1591529068196">
       <screen x="0" y="0" width="1842" height="1080" />
     </state>
     <state width="1495" height="283" key="GridCell.Tab.0.left/0.0.1842.1080/-1538.177.1538.900@-1538.177.1538.900" timestamp="1591362548017" />
-    <state width="1799" height="192" key="GridCell.Tab.0.left/0.0.1842.1080/-1538.177.1538.900@0.0.1842.1080" timestamp="1591450139553" />
+    <state width="1799" height="247" key="GridCell.Tab.0.left/0.0.1842.1080/-1538.177.1538.900@0.0.1842.1080" timestamp="1591529068196" />
     <state width="1799" height="501" key="GridCell.Tab.0.left/0.0.1842.1080@0.0.1842.1080" timestamp="1590819767114" />
-    <state width="1799" height="192" key="GridCell.Tab.0.right" timestamp="1591450139553">
+    <state width="1799" height="247" key="GridCell.Tab.0.right" timestamp="1591529068196">
       <screen x="0" y="0" width="1842" height="1080" />
     </state>
     <state width="1495" height="283" key="GridCell.Tab.0.right/0.0.1842.1080/-1538.177.1538.900@-1538.177.1538.900" timestamp="1591362548017" />
-    <state width="1799" height="192" key="GridCell.Tab.0.right/0.0.1842.1080/-1538.177.1538.900@0.0.1842.1080" timestamp="1591450139553" />
+    <state width="1799" height="247" key="GridCell.Tab.0.right/0.0.1842.1080/-1538.177.1538.900@0.0.1842.1080" timestamp="1591529068196" />
     <state width="1799" height="501" key="GridCell.Tab.0.right/0.0.1842.1080@0.0.1842.1080" timestamp="1590819767114" />
-    <state width="1799" height="192" key="GridCell.Tab.1.bottom" timestamp="1591450139554">
+    <state width="1799" height="247" key="GridCell.Tab.1.bottom" timestamp="1591529068196">
       <screen x="0" y="0" width="1842" height="1080" />
     </state>
     <state width="1495" height="283" key="GridCell.Tab.1.bottom/0.0.1842.1080/-1538.177.1538.900@-1538.177.1538.900" timestamp="1591362548018" />
-    <state width="1799" height="192" key="GridCell.Tab.1.bottom/0.0.1842.1080/-1538.177.1538.900@0.0.1842.1080" timestamp="1591450139554" />
+    <state width="1799" height="247" key="GridCell.Tab.1.bottom/0.0.1842.1080/-1538.177.1538.900@0.0.1842.1080" timestamp="1591529068196" />
     <state width="1799" height="501" key="GridCell.Tab.1.bottom/0.0.1842.1080@0.0.1842.1080" timestamp="1590819767114" />
-    <state width="1799" height="192" key="GridCell.Tab.1.center" timestamp="1591450139553">
+    <state width="1799" height="247" key="GridCell.Tab.1.center" timestamp="1591529068196">
       <screen x="0" y="0" width="1842" height="1080" />
     </state>
     <state width="1495" height="283" key="GridCell.Tab.1.center/0.0.1842.1080/-1538.177.1538.900@-1538.177.1538.900" timestamp="1591362548018" />
-    <state width="1799" height="192" key="GridCell.Tab.1.center/0.0.1842.1080/-1538.177.1538.900@0.0.1842.1080" timestamp="1591450139553" />
+    <state width="1799" height="247" key="GridCell.Tab.1.center/0.0.1842.1080/-1538.177.1538.900@0.0.1842.1080" timestamp="1591529068196" />
     <state width="1799" height="501" key="GridCell.Tab.1.center/0.0.1842.1080@0.0.1842.1080" timestamp="1590819767114" />
-    <state width="1799" height="192" key="GridCell.Tab.1.left" timestamp="1591450139553">
+    <state width="1799" height="247" key="GridCell.Tab.1.left" timestamp="1591529068196">
       <screen x="0" y="0" width="1842" height="1080" />
     </state>
     <state width="1495" height="283" key="GridCell.Tab.1.left/0.0.1842.1080/-1538.177.1538.900@-1538.177.1538.900" timestamp="1591362548018" />
-    <state width="1799" height="192" key="GridCell.Tab.1.left/0.0.1842.1080/-1538.177.1538.900@0.0.1842.1080" timestamp="1591450139553" />
+    <state width="1799" height="247" key="GridCell.Tab.1.left/0.0.1842.1080/-1538.177.1538.900@0.0.1842.1080" timestamp="1591529068196" />
     <state width="1799" height="501" key="GridCell.Tab.1.left/0.0.1842.1080@0.0.1842.1080" timestamp="1590819767114" />
-    <state width="1799" height="192" key="GridCell.Tab.1.right" timestamp="1591450139554">
+    <state width="1799" height="247" key="GridCell.Tab.1.right" timestamp="1591529068196">
       <screen x="0" y="0" width="1842" height="1080" />
     </state>
     <state width="1495" height="283" key="GridCell.Tab.1.right/0.0.1842.1080/-1538.177.1538.900@-1538.177.1538.900" timestamp="1591362548018" />
-    <state width="1799" height="192" key="GridCell.Tab.1.right/0.0.1842.1080/-1538.177.1538.900@0.0.1842.1080" timestamp="1591450139554" />
+    <state width="1799" height="247" key="GridCell.Tab.1.right/0.0.1842.1080/-1538.177.1538.900@0.0.1842.1080" timestamp="1591529068196" />
     <state width="1799" height="501" key="GridCell.Tab.1.right/0.0.1842.1080@0.0.1842.1080" timestamp="1590819767114" />
-    <state width="1799" height="341" key="GridCell.Tab.2.bottom/0.0.1842.1080/-1538.177.1538.900@0.0.1842.1080" timestamp="1591234249946" />
+    <state width="1799" height="339" key="GridCell.Tab.2.bottom" timestamp="1591521446270">
+      <screen x="0" y="0" width="1842" height="1080" />
+    </state>
+    <state width="1799" height="339" key="GridCell.Tab.2.bottom/0.0.1842.1080/-1538.177.1538.900@0.0.1842.1080" timestamp="1591521446270" />
     <state width="1799" height="341" key="GridCell.Tab.2.bottom/0.0.1842.1080@0.0.1842.1080" timestamp="1590599561428" />
-    <state width="1799" height="341" key="GridCell.Tab.2.center/0.0.1842.1080/-1538.177.1538.900@0.0.1842.1080" timestamp="1591234249946" />
+    <state width="1799" height="339" key="GridCell.Tab.2.center" timestamp="1591521446269">
+      <screen x="0" y="0" width="1842" height="1080" />
+    </state>
+    <state width="1799" height="339" key="GridCell.Tab.2.center/0.0.1842.1080/-1538.177.1538.900@0.0.1842.1080" timestamp="1591521446269" />
     <state width="1799" height="341" key="GridCell.Tab.2.center/0.0.1842.1080@0.0.1842.1080" timestamp="1590599561428" />
-    <state width="1799" height="341" key="GridCell.Tab.2.left/0.0.1842.1080/-1538.177.1538.900@0.0.1842.1080" timestamp="1591234249946" />
+    <state width="1799" height="339" key="GridCell.Tab.2.left" timestamp="1591521446269">
+      <screen x="0" y="0" width="1842" height="1080" />
+    </state>
+    <state width="1799" height="339" key="GridCell.Tab.2.left/0.0.1842.1080/-1538.177.1538.900@0.0.1842.1080" timestamp="1591521446269" />
     <state width="1799" height="341" key="GridCell.Tab.2.left/0.0.1842.1080@0.0.1842.1080" timestamp="1590599561428" />
-    <state width="1799" height="341" key="GridCell.Tab.2.right/0.0.1842.1080/-1538.177.1538.900@0.0.1842.1080" timestamp="1591234249946" />
+    <state width="1799" height="339" key="GridCell.Tab.2.right" timestamp="1591521446269">
+      <screen x="0" y="0" width="1842" height="1080" />
+    </state>
+    <state width="1799" height="339" key="GridCell.Tab.2.right/0.0.1842.1080/-1538.177.1538.900@0.0.1842.1080" timestamp="1591521446269" />
     <state width="1799" height="341" key="GridCell.Tab.2.right/0.0.1842.1080@0.0.1842.1080" timestamp="1590599561428" />
+    <state width="220" height="539" key="HiddenNamespacesPopup" timestamp="1591526993880">
+      <screen x="0" y="0" width="1842" height="1080" />
+    </state>
+    <state width="220" height="539" key="HiddenNamespacesPopup/0.0.1842.1080/-1538.177.1538.900@0.0.1842.1080" timestamp="1591526993880" />
     <state x="451" y="195" key="Maven.ArtifactSearchDialog" timestamp="1591410100794">
       <screen x="0" y="0" width="1842" height="1080" />
     </state>
     <state x="451" y="195" key="Maven.ArtifactSearchDialog/0.0.1842.1080/-1538.177.1538.900@0.0.1842.1080" timestamp="1591410100794" />
     <state x="451" y="195" key="Maven.ArtifactSearchDialog/0.0.1842.1080@0.0.1842.1080" timestamp="1590816928616" />
-    <state x="422" y="182" key="SettingsEditor" timestamp="1591413445916">
+    <state x="-1346" y="227" width="1222" height="835" key="SettingsEditor" timestamp="1591532815840">
+      <screen x="-1538" y="177" width="1538" height="900" />
+    </state>
+    <state x="-1346" y="227" width="1222" height="835" key="SettingsEditor/0.0.1842.1080/-1538.177.1538.900@0.0.1842.1080" timestamp="1591532815840" />
+    <state x="651" y="345" key="com.intellij.database.dbimport.ImportUtil.MyDialog" timestamp="1591528850522">
       <screen x="0" y="0" width="1842" height="1080" />
     </state>
-    <state x="422" y="182" key="SettingsEditor/0.0.1842.1080/-1538.177.1538.900@0.0.1842.1080" timestamp="1591413445916" />
+    <state x="651" y="345" key="com.intellij.database.dbimport.ImportUtil.MyDialog/0.0.1842.1080/-1538.177.1538.900@0.0.1842.1080" timestamp="1591528850522" />
     <state x="577" y="364" key="com.intellij.ide.util.TipDialog" timestamp="1591410554056">
       <screen x="0" y="0" width="1842" height="1080" />
     </state>

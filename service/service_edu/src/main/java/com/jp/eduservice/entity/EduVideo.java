@@ -1,11 +1,9 @@
 package com.jp.eduservice.entity;
 
-import com.baomidou.mybatisplus.annotation.FieldFill;
-import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.*;
+
 import java.util.Date;
 
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -43,9 +41,11 @@ public class EduVideo implements Serializable {
     private String title;
 
     @ApiModelProperty(value = "云端视频资源")
+    @TableField(fill = FieldFill.UPDATE)
     private String videoSourceId;
 
     @ApiModelProperty(value = "原始文件名称")
+    @TableField(fill = FieldFill.UPDATE)
     private String videoOriginalName;
 
     @ApiModelProperty(value = "排序字段")

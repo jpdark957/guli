@@ -2,6 +2,7 @@ package com.jp.eduservice.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.jp.eduservice.client.VodClient;
 import com.jp.eduservice.entity.EduChapter;
 import com.jp.eduservice.entity.EduCourse;
 import com.jp.eduservice.entity.EduCourseDescription;
@@ -18,7 +19,9 @@ import com.jp.servicebase.exceptionHandler.JpExceptionHandler;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -41,6 +44,9 @@ public class EduCourseServiceImpl extends ServiceImpl<EduCourseMapper, EduCourse
 
     @Autowired
     private EduChapterService chapterService;
+
+    @Autowired
+    private VodClient vodClient;
 
     @Override
     public String saveCourseInfo(CourseInfoVo courseInfoVo) {
@@ -100,7 +106,26 @@ public class EduCourseServiceImpl extends ServiceImpl<EduCourseMapper, EduCourse
     //删除课程
     @Override
     public void removeCourse(String courseId) {
-//        videoService.removeVideoByCourseId(courseId);
+        //根据课程id查询课程所有的视频id
+        QueryWrapper<EduVideo> wrapperVideoId = new QueryWrapper<>();
+        wrapperVideoId.eq("course_id", courseId);
+        wrapperVideoId.select("video_source_id");
+        List<EduVideo> eduVideoList = videoService.list(wrapperVideoId);
+
+        //List<EduVideo> 变成List<String>
+        List<String> videoIds = new ArrayList<>();
+        for (int i = 0; i < eduVideoList.size(); i++) {
+            EduVideo eduVideo = eduVideoList.get(i);
+            String videoSourceId = eduVideo.getVideoSourceId();
+            if(!StringUtils.isEmpty(videoSourceId)) {
+                videoIds.add(videoSourceId);
+            }
+        }
+        if(videoIds.size() > 0) {
+            //删除视频
+            vodClient.deleteBatch(videoIds);
+        }
+
 
         //删除小节
         QueryWrapper<EduVideo> wrapperVideo = new QueryWrapper<>();
@@ -115,6 +140,7 @@ public class EduCourseServiceImpl extends ServiceImpl<EduCourseMapper, EduCourse
         QueryWrapper<EduCourseDescription> wrapperCourseDescription = new QueryWrapper<>();
         wrapperCourseDescription.eq("id", courseId);
         courseDescriptionService.remove(wrapperCourseDescription);
+
 
 
         int result = baseMapper.deleteById(courseId);
