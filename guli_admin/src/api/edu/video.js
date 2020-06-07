@@ -36,5 +36,10 @@ export default {
       method: 'DELETE'
     })
   },
-  
+  deleteVidAndName(id) {
+    return request({
+      url: `/eduservice/video/deleteVidAndName/${id}`,
+      method: 'POST'
+    })
+  } 
 }

@@ -66,7 +66,7 @@
           <el-input-number v-model="video.sort" :min="0" controls-position="right" />
         </el-form-item>
         <el-form-item label="是否免费">
-          <el-radio-group v-model="video.free">
+          <el-radio-group v-model="video.isFree">
             <el-radio :label="true">免费</el-radio>
             <el-radio :label="false">默认</el-radio>
           </el-radio-group>
@@ -124,8 +124,8 @@ export default {
         title: "",
         sort: 0,
         free: 0,
-        videoSourceId: "",
-        videoOriginalName: ""
+        videoSourceId: null,
+        videoOriginalName: null
       },
       dialogChapterFormVisible: false, //章节弹框
       dialogVideoFormVisible: false, //小节弹框
@@ -143,8 +143,9 @@ export default {
   methods: {
     //上传视频成功调用的方法
     handleVodUploadSuccess(res, file, fileList) {
-      this.video.videoSourceId = res.data.videoId
-      this.video.videoOriginalName = file.name
+      this.video.videoSourceId = res.data.videoId;
+      this.video.videoOriginalName = file.name;
+      this.fileList = fileList;
     },
     handleUploadExceed() {
       this.$message.warning("想要重新上传视频，请先删除已上传的视频");
@@ -152,18 +153,19 @@ export default {
     //确定删除视频调用的方法
     handleVodRemove() {
       video.deleteAlyvod(this.video.videoSourceId).then(res => {
-         this.$message({
+        this.$message({
           type: "success",
           message: "删除视频成功!"
         });
-        this.fileList = []
-        this.video.videoSourceId = ""
-        this.video.videoOriginalName = ""
-      })
+        this.fileList = [];
+        this.video.videoSourceId = "";
+        this.video.videoOriginalName = "";
+      });
+      video.deleteVidAndName(this.video.id)
     },
     //点击x调用这个方法
     beforeVodRemove(file, fileList) {
-      return this.$confirm(`确定移除${file.name}?`)
+      return this.$confirm(`确定移除${file.name}?`);
     },
     //========================小节管理============================//
     //修改弹框数据回显
@@ -172,6 +174,15 @@ export default {
       this.dialogVideoFormVisible = true;
       video.getVideoInfo(videoInfo.id).then(res => {
         this.video = res.data.video;
+        if (res.data.video.videoOriginalName != null
+          && res.data.video.videoOriginalName.length > 0
+        ) {
+          this.fileList = [
+            {
+              name: res.data.video.videoOriginalName
+            }
+          ];
+        }
       });
     },
 
@@ -213,6 +224,11 @@ export default {
 
     //添加小节弹框的方法
     openVideo(chapterId) {
+      this.video = {
+        title: "",
+        sort: 0
+      };
+      this.fileList = [];
       this.video.courseId = this.courseId;
       this.video.chapterId = chapterId;
       this.from_video = "添加小节";
