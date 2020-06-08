@@ -1,5 +1,5 @@
 {
-  "name": "{{ name }}",
+  "name": "guli_front",
   "version": "1.0.0",
   "description": "{{ description }}",
   "author": "{{ author }}",
@@ -13,6 +13,7 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "nuxt": "^2.0.0"
   },
   "devDependencies": {
