@@ -3,11 +3,13 @@ package com.jp.educenter.controller;
 
 import com.jp.commonutils.JwtUtils;
 import com.jp.commonutils.R;
+import com.jp.commonutils.ordervo.UcenterMemberOrderAndComment;
 import com.jp.educenter.entity.UcenterMember;
 import com.jp.educenter.entity.vo.RegisterVo;
 import com.jp.educenter.service.UcenterMemberService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -61,5 +63,17 @@ public class UcenterMemberController {
         return R.ok().data("asdasd","asasdassdasda");
     }
 
+
+    //根据用户id获取用户信息
+    @ApiOperation("根据用户id获取用户信息")
+    @PostMapping("getInfoUc/{id}")
+    public UcenterMemberOrderAndComment getInfo(@PathVariable String id) {
+        //根据用户id获取用户信息
+        UcenterMember ucenterMember = memberService.getById(id);
+        //把member对象里面值复制给UcenterMemberOrderAndComment对象
+        UcenterMemberOrderAndComment memeber = new UcenterMemberOrderAndComment();
+        BeanUtils.copyProperties(ucenterMember,memeber);
+        return memeber;
+    }
 }
 
