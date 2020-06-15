@@ -7,6 +7,8 @@ import com.jp.eduservice.entity.EduChapter;
 import com.jp.eduservice.entity.EduCourse;
 import com.jp.eduservice.entity.EduCourseDescription;
 import com.jp.eduservice.entity.EduVideo;
+import com.jp.eduservice.entity.frontVo.CourseFrontVo;
+import com.jp.eduservice.entity.frontVo.CourseWebVo;
 import com.jp.eduservice.entity.vo.CourseInfoVo;
 import com.jp.eduservice.entity.vo.CoursePublishVo;
 import com.jp.eduservice.mapper.EduCourseMapper;
@@ -18,11 +20,14 @@ import com.jp.eduservice.service.EduVideoService;
 import com.jp.servicebase.exceptionHandler.JpExceptionHandler;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * <p>
@@ -149,4 +154,67 @@ public class EduCourseServiceImpl extends ServiceImpl<EduCourseMapper, EduCourse
         }
     }
 
+
+    //查询热门课程
+    @Cacheable(value="course", key="'indexCourse'")
+    @Override
+    public List<EduCourse> indexCourse() {
+        //查询前8条热门课程
+        QueryWrapper<EduCourse> courseWrapper = new QueryWrapper<>();
+        courseWrapper.orderByDesc("id");
+        courseWrapper.last("LIMIT 8");
+        List<EduCourse> courseList = baseMapper.selectList(courseWrapper);
+        return courseList;
+    }
+
+
+    @Override
+    public Map<String, Object> getCourseFrontList(Page<EduCourse> pageCourse, CourseFrontVo courseFrontVo) {
+        QueryWrapper<EduCourse> wrapper = new QueryWrapper<>();
+        //判断条件值是否为空，不为空拼接
+        if(!StringUtils.isEmpty(courseFrontVo.getSubjectParentId())) {  //一级分类
+            wrapper.eq("subject_parent_id", courseFrontVo.getSubjectParentId());
+        }
+        if(!StringUtils.isEmpty(courseFrontVo.getSubjectId())) {    //二级分类
+            wrapper.eq("subject_id", courseFrontVo.getSubjectId());
+        }
+        if (!StringUtils.isEmpty(courseFrontVo.getBuyCountSort())) {    //关注度
+            wrapper.orderByDesc("buy_count");
+        }
+
+        if (!StringUtils.isEmpty(courseFrontVo.getGmtCreateSort())) {   //最新
+            wrapper.orderByDesc("gmt_create");
+        }
+
+        if (!StringUtils.isEmpty(courseFrontVo.getPriceSort())) {  //价格
+            wrapper.orderByDesc("price");
+        }
+
+        baseMapper.selectPage(pageCourse, wrapper);
+
+        List<EduCourse> records = pageCourse.getRecords();
+        long current = pageCourse.getCurrent();
+        long pages = pageCourse.getPages();
+        long size = pageCourse.getSize();
+        long total = pageCourse.getTotal();
+        boolean hasNext = pageCourse.hasNext();
+        boolean hasPrevious = pageCourse.hasPrevious();
+
+        Map<String, Object> map = new HashMap<>();
+        map.put("items", records);
+        map.put("current", current);
+        map.put("pages", pages);
+        map.put("size", size);
+        map.put("total", total);
+        map.put("hasNext", hasNext);
+        map.put("hasPrevious", hasPrevious);
+
+        return map;
+    }
+
+    //前台课程详情 根据课程id查询课程信息
+    @Override
+    public CourseWebVo getBaseCourseInfo(String courseId) {
+        return baseMapper.getBaseCourseInfo(courseId);
+    }
 }

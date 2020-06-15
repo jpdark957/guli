@@ -33,6 +33,7 @@ public class EduChapterController {
     @GetMapping("getChapterVideo/{courseId}")
     public R getChapterVideo(@PathVariable String courseId) {
         List<ChapterVo> list = chapterService.getChapterVideoByCourseId(courseId);
+        System.out.println(courseId);
         return R.ok().data("allChapterVideo", list);
     }
 
