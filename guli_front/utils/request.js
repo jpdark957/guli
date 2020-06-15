@@ -21,7 +21,6 @@ service.interceptors.request.use(
   return Promise.reject(err);
 })
 // http response 拦截器
-/*
 service.interceptors.response.use(
   response => {
     //debugger
@@ -32,9 +31,9 @@ service.interceptors.response.use(
         window.location.href="/login"
         return
     }else{
-      if (response.data.code !== 20000) {
+      if (response.data.code !== 200) {
         //25000：订单支付中，不做任何提示
-        if(response.data.code != 25000) {
+        if(response.data.code != 250) {
           Message({
             message: response.data.message || 'error',
             type: 'error',
@@ -49,6 +48,4 @@ service.interceptors.response.use(
   error => {
     return Promise.reject(error.response)   // 返回接口返回的错误信息
 });
-*/
-
 export default service

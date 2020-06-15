@@ -125,7 +125,6 @@
 <script>
 import banner from "@/api/banner";
 import index from "@/api/index";
-
 export default {
   data() {
     return {
@@ -151,6 +150,7 @@ export default {
     this.getBannerList();
     //调用查询热门课程和名师的方法
     this.getHotCourseTeacher();
+    // console.log(config.headers['token'])
   },
   methods: {
     //查询热门课程和名师

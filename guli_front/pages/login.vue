@@ -39,11 +39,7 @@
         <h6>社交帐号登录</h6>
         <ul>
           <li>
-            <a
-              id="weixin"
-              class="weixin"
-              href="http://localhost:8150/api/ucenter/wx/login"
-            >
+            <a id="weixin" class="weixin" href="http://localhost:8150/api/ucenter/wx/login">
               <i class="iconfont icon-weixin" />
             </a>
           </li>
@@ -77,10 +73,19 @@ export default {
       },
       //用户信息
       loginInfo: {},
-      token: ""
+      token: "",
+      fromRouter: ''
     };
   },
-
+  created() {
+    console.log(this.$route);
+  },
+  beforeRouteEnter(to, from, next) {
+    next(vm => {
+      //  这里的vm指的就是vue实例，可以用来当做this使用
+      vm.$data.fromRouter = from.path
+    });
+  },
   methods: {
     //登录的方法
     submitLogin() {
@@ -103,7 +108,7 @@ export default {
           console.log(cookie.get("guli_ucenter"));
 
           //跳转页面
-          window.location.href = "/";
+          window.location.href = this.fromRouter;
         });
       });
     },

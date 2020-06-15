@@ -33,13 +33,16 @@
                 <a class="c-fff vam" title="收藏" href="#">收藏</a>
               </span>
             </section>
-            <section class="c-attr-mt">
-              <a href="#" title="立即观看" class="comm-btn c-btn-3">立即观看</a>
+            <section class="c-attr-mt" v-if="Number(courseWebVo.price) === 0 || isbuy ">
+              <a href="#" title="立即观看" class="comm-btn c-btn-3" @click="createOrders">立即观看</a>
+            </section>
+            <section class="c-attr-mt" v-else>
+              <a href="#" title="立即购买" class="comm-btn c-btn-3" @click="createOrders">立即购买</a>
             </section>
           </section>
         </aside>
         <aside class="thr-attr-box">
-          <ol class="thr-attr-ol clearfix">
+          <ol class="thr-attr-ol">
             <li>
               <p>&nbsp;</p>
               <aside>
@@ -89,6 +92,7 @@
                     </section>
                   </div>
                 </div>
+
                 <!-- /课程介绍 -->
                 <div class="mt50">
                   <h6 class="c-g-content c-infor-title">
@@ -131,6 +135,117 @@
                   </section>
                 </div>
                 <!-- /课程大纲 -->
+
+                <!-- 课程评论 -->
+                <div class="mt50 commentHtml">
+                  <div>
+                    <h6 class="c-c-content c-infor-title" id="i-art-comment">
+                      <span class="commentTitle">课程评论</span>
+                    </h6>
+                    <section class="lh-bj-list pr mt20 replyhtml">
+                      <ul>
+                        <li class="unBr">
+                          <aside class="noter-pic">
+                            <img
+                              width="50"
+                              height="50"
+                              class="picImg"
+                              :src="loginInfo.avatar.length != 0 ? loginInfo.avatar : 'https://jpdark.oss-cn-beijing.aliyuncs.com/random/2.jpg'"
+                            />
+                          </aside>
+                          <div class="of">
+                            <section class="n-reply-wrap">
+                              <fieldset>
+                                <textarea
+                                  name
+                                  v-model="comment.content"
+                                  :placeholder="loginInfo.id != '' ? '输入您要评论的文字' : '请先登录您的账号!'"
+                                  id="commentContent"
+                                  :disabled="loginInfo.textDisabled"
+                                ></textarea>
+                              </fieldset>
+                              <p class="of mt5 tar pl10 pr10">
+                                <span class="fl">
+                                  <tt class="c-red commentContentmeg" style="display: none;"></tt>
+                                </span>
+                                <input
+                                  type="button"
+                                  @click="addComment()"
+                                  value="回复"
+                                  class="lh-reply-btn"
+                                />
+                              </p>
+                            </section>
+                          </div>
+                        </li>
+                      </ul>
+                    </section>
+                    <section class>
+                      <section class="question-list lh-bj-list pr">
+                        <ul class="pr10">
+                          <li v-for="(comment,index) in data.items" v-bind:key="index">
+                            <aside class="noter-pic">
+                              <img width="50" height="50" class="picImg" :src="comment.avatar" />
+                            </aside>
+                            <div class="of">
+                              <span class="fl">
+                                <font class="fsize12 c-blue">{{comment.nickname}}</font>
+                                <font class="fsize12 c-999 ml5">评论：</font>
+                              </span>
+                            </div>
+                            <div class="noter-txt mt5">
+                              <p>{{comment.content}}</p>
+                            </div>
+                            <div class="of mt5">
+                              <span class="fr">
+                                <font class="fsize12 c-999 ml5">{{comment.gmtCreate}}</font>
+                              </span>
+                            </div>
+                          </li>
+                        </ul>
+                      </section>
+                    </section>
+
+                    <!-- 公共分页 开始 -->
+                    <div class="paging">
+                      <!-- undisable这个class是否存在，取决于数据属性hasPrevious -->
+                      <a
+                        :class="{undisable: !data.hasPrevious}"
+                        href="#"
+                        title="首页"
+                        @click.prevent="gotoPage(1)"
+                      >首</a>
+                      <a
+                        :class="{undisable: !data.hasPrevious}"
+                        href="#"
+                        title="前一页"
+                        @click.prevent="gotoPage(data.current-1)"
+                      >&lt;</a>
+                      <a
+                        v-for="page in data.pages"
+                        :key="page"
+                        :class="{current: data.current == page, undisable: data.current == page}"
+                        :title="'第'+page+'页'"
+                        href="#"
+                        @click.prevent="gotoPage(page)"
+                      >{{ page }}</a>
+                      <a
+                        :class="{undisable: !data.hasNext}"
+                        href="#"
+                        title="后一页"
+                        @click.prevent="gotoPage(data.current+1)"
+                      >&gt;</a>
+                      <a
+                        :class="{undisable: !data.hasNext}"
+                        href="#"
+                        title="末页"
+                        @click.prevent="gotoPage(data.pages)"
+                      >末</a>
+                      <div class="clear" />
+                    </div>
+                    <!-- 公共分页 结束 -->
+                  </div>
+                </div>
               </article>
             </div>
           </section>
@@ -169,15 +284,99 @@
 </template>
 
 <script>
-import course from "@/api/course";
+import courseApi from "@/api/course";
+import comment from "@/api/comment";
+import cookie from "js-cookie";
+import loginApi from "@/api/login";
+import orderApi from "@/api/order";
 export default {
+  data() {
+    return {
+      data: {},
+      page: 1,
+      size: 4,
+      comment: {
+        content: "",
+        courseId: ""
+      },
+      chapterVideoList: [],
+      courseWebVo: {},
+      isbuy: false,
+      loginInfo: {
+        textDisabled: true
+      } //用户信息
+    };
+  },
   asyncData({ params, error }) {
-    return course.getCourseInfo(params.id).then(res => {
-      return {
-        courseWebVo: res.data.data.courseWebVo,
-        chapterVideoList: res.data.data.chapterVideoList
-      };
-    });
+    return { courseId: params.id };
+  },
+  created() {
+    this.initCourseInfo();
+    this.gotoPage(this.page);
+    this.userLogin();
+  },
+  methods: {
+    /**
+     * 生成订单
+     */
+    createOrders() {
+      orderApi.createOrders(this.courseId).then(res => {
+        //获取返回订单号
+        console.log(res.data);
+        //生成订单之后，跳转订单显示页面
+        this.$router.push({
+          path: "/orders/" + res.data.data.order
+        });
+      });
+    },
+    /**
+     * 判断用户是否登录
+     */
+    userLogin() {
+      this.loginInfo = this.$parent.$parent.loginInfo;
+      this.loginInfo.textDisabled = true;
+      if (this.$parent.$parent.loginInfo.id != "") {
+        this.loginInfo.textDisabled = false;
+      }
+    },
+    /**
+     * 添加评论
+     */
+    addComment() {
+      this.comment.courseId = this.courseId;
+      this.comment.teacherId = this.courseWebVo.teacherId;
+      comment.addComment(this.comment).then(res => {
+        if (res.data.success) {
+          this.comment.content = "";
+          this.gotoPage(1);
+        }
+      });
+    },
+    /**
+     * 评论列表
+     */
+    gotoPage(page) {
+      comment.getPageList(page, this.size, this.courseId).then(res => {
+        this.data = res.data.data;
+      });
+    },
+    /**
+     * 初始化详情数据
+     */
+    initCourseInfo() {
+      // courseApi.getCourseInfo(this.courseId).then(res => {
+      // (this.courseId = res.data.data.id),
+      //   (this.courseWebVo = res.data.data.courseWebVo),
+      //   (this.chapterVideoList = res.data.data.chapterVideoList);
+      //   console.log(res.data.data)
+      // });
+      courseApi.getCourseInfo(this.courseId).then(res => {
+        console.log(res.data.data);
+        this.courseWebVo = res.data.data.courseWebVo;
+        this.chapterVideoList = res.data.data.chapterVideoList;
+        this.isbuy = res.data.data.isBuy;
+      });
+    }
   }
 };
 </script>
