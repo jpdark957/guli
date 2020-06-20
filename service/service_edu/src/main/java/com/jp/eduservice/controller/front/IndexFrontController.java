@@ -19,7 +19,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/eduservice/indexfront")
 @Api(tags = "前台主页接口")
-@CrossOrigin
+//@CrossOrigin
 public class IndexFrontController {
 
     @Autowired

@@ -32,7 +32,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/eduservice/course")
 @Api(tags = "课程信息")
-@CrossOrigin
+//@CrossOrigin
 public class EduCourseController {
 
     //注入Service层

@@ -22,7 +22,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@CrossOrigin
+//@CrossOrigin
 @RequestMapping("/eduservice/coursefront")
 @Api(tags = "前台课程模块")
 public class CourseFrontController {

@@ -28,7 +28,7 @@ import java.util.Map;
 @Api(tags = {"讲师管理"})
 @RestController
 @RequestMapping("/eduservice/teacher")
-@CrossOrigin //跨域
+//@CrossOrigin //跨域
 public class EduTeacherController {
 
     //注入service

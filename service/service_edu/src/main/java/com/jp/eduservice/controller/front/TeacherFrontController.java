@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@CrossOrigin
+//@CrossOrigin
 @RequestMapping("/eduservice/teacherfront")
 @Api(tags = "前台讲师模块")
 public class TeacherFrontController {
